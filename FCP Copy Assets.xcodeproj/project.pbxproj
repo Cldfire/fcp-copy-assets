@@ -13,6 +13,10 @@
 		848CA27D20AFCAEC000ACDF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CA27B20AFCAEC000ACDF1 /* Main.storyboard */; };
 		848CA28920AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA28820AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift */; };
 		848CA29420AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA29320AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift */; };
+		848CA2A220AFCB04000ACDF1 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA2A120AFCB04000ACDF1 /* DropView.swift */; };
+		848CA2A420AFCB2D000ACDF1 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CA2A320AFCB2C000ACDF1 /* SWXMLHash.framework */; };
+		848CA2A520AFCB2D000ACDF1 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848CA2A320AFCB2C000ACDF1 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		848CA2A920AFCB43000ACDF1 /* SWXMLHash.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 848CA2A820AFCB43000ACDF1 /* SWXMLHash.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		848CA2A620AFCB2D000ACDF1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				848CA2A520AFCB2D000ACDF1 /* SWXMLHash.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA2A720AFCB34000ACDF1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				848CA2A920AFCB43000ACDF1 /* SWXMLHash.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		848CA27220AFCAEB000ACDF1 /* FCP Copy Assets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FCP Copy Assets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +74,9 @@
 		848CA28F20AFCAEC000ACDF1 /* FCP Copy AssetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FCP Copy AssetsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CA29320AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCP_Copy_AssetsUITests.swift; sourceTree = "<group>"; };
 		848CA29520AFCAEC000ACDF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848CA2A120AFCB04000ACDF1 /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
+		848CA2A320AFCB2C000ACDF1 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
+		848CA2A820AFCB43000ACDF1 /* SWXMLHash.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SWXMLHash.framework.dSYM; path = Carthage/Build/Mac/SWXMLHash.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848CA2A420AFCB2D000ACDF1 /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +108,8 @@
 		848CA26920AFCAEB000ACDF1 = {
 			isa = PBXGroup;
 			children = (
+				848CA2A820AFCB43000ACDF1 /* SWXMLHash.framework.dSYM */,
+				848CA2A320AFCB2C000ACDF1 /* SWXMLHash.framework */,
 				848CA27420AFCAEB000ACDF1 /* FCP Copy Assets */,
 				848CA28720AFCAEC000ACDF1 /* FCP Copy AssetsTests */,
 				848CA29220AFCAEC000ACDF1 /* FCP Copy AssetsUITests */,
@@ -98,6 +132,7 @@
 			children = (
 				848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */,
 				848CA27720AFCAEB000ACDF1 /* ViewController.swift */,
+				848CA2A120AFCB04000ACDF1 /* DropView.swift */,
 				848CA27920AFCAEC000ACDF1 /* Assets.xcassets */,
 				848CA27B20AFCAEC000ACDF1 /* Main.storyboard */,
 				848CA27E20AFCAEC000ACDF1 /* Info.plist */,
@@ -134,6 +169,8 @@
 				848CA26E20AFCAEB000ACDF1 /* Sources */,
 				848CA26F20AFCAEB000ACDF1 /* Frameworks */,
 				848CA27020AFCAEB000ACDF1 /* Resources */,
+				848CA2A620AFCB2D000ACDF1 /* Embed Frameworks */,
+				848CA2A720AFCB34000ACDF1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -256,6 +293,7 @@
 			files = (
 				848CA27820AFCAEB000ACDF1 /* ViewController.swift in Sources */,
 				848CA27620AFCAEB000ACDF1 /* AppDelegate.swift in Sources */,
+				848CA2A220AFCB04000ACDF1 /* DropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +461,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "FCP Copy Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +484,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "FCP Copy Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
