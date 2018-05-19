@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		848CA27620AFCAEB000ACDF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */; };
+		848CA27820AFCAEB000ACDF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA27720AFCAEB000ACDF1 /* ViewController.swift */; };
+		848CA27A20AFCAEC000ACDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CA27920AFCAEC000ACDF1 /* Assets.xcassets */; };
+		848CA27D20AFCAEC000ACDF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CA27B20AFCAEC000ACDF1 /* Main.storyboard */; };
+		848CA28920AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA28820AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift */; };
+		848CA29420AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA29320AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		848CA28520AFCAEC000ACDF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 848CA26A20AFCAEB000ACDF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 848CA27120AFCAEB000ACDF1;
+			remoteInfo = "FCP Copy Assets";
+		};
+		848CA29020AFCAEC000ACDF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 848CA26A20AFCAEB000ACDF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 848CA27120AFCAEB000ACDF1;
+			remoteInfo = "FCP Copy Assets";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		848CA27220AFCAEB000ACDF1 /* FCP Copy Assets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FCP Copy Assets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		848CA27720AFCAEB000ACDF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		848CA27920AFCAEC000ACDF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		848CA27C20AFCAEC000ACDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		848CA27E20AFCAEC000ACDF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848CA27F20AFCAEC000ACDF1 /* FCP_Copy_Assets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FCP_Copy_Assets.entitlements; sourceTree = "<group>"; };
+		848CA28420AFCAEC000ACDF1 /* FCP Copy AssetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FCP Copy AssetsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848CA28820AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCP_Copy_AssetsTests.swift; sourceTree = "<group>"; };
+		848CA28A20AFCAEC000ACDF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848CA28F20AFCAEC000ACDF1 /* FCP Copy AssetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FCP Copy AssetsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848CA29320AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCP_Copy_AssetsUITests.swift; sourceTree = "<group>"; };
+		848CA29520AFCAEC000ACDF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		848CA26F20AFCAEB000ACDF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA28120AFCAEC000ACDF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA28C20AFCAEC000ACDF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		848CA26920AFCAEB000ACDF1 = {
+			isa = PBXGroup;
+			children = (
+				848CA27420AFCAEB000ACDF1 /* FCP Copy Assets */,
+				848CA28720AFCAEC000ACDF1 /* FCP Copy AssetsTests */,
+				848CA29220AFCAEC000ACDF1 /* FCP Copy AssetsUITests */,
+				848CA27320AFCAEB000ACDF1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		848CA27320AFCAEB000ACDF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				848CA27220AFCAEB000ACDF1 /* FCP Copy Assets.app */,
+				848CA28420AFCAEC000ACDF1 /* FCP Copy AssetsTests.xctest */,
+				848CA28F20AFCAEC000ACDF1 /* FCP Copy AssetsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		848CA27420AFCAEB000ACDF1 /* FCP Copy Assets */ = {
+			isa = PBXGroup;
+			children = (
+				848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */,
+				848CA27720AFCAEB000ACDF1 /* ViewController.swift */,
+				848CA27920AFCAEC000ACDF1 /* Assets.xcassets */,
+				848CA27B20AFCAEC000ACDF1 /* Main.storyboard */,
+				848CA27E20AFCAEC000ACDF1 /* Info.plist */,
+				848CA27F20AFCAEC000ACDF1 /* FCP_Copy_Assets.entitlements */,
+			);
+			path = "FCP Copy Assets";
+			sourceTree = "<group>";
+		};
+		848CA28720AFCAEC000ACDF1 /* FCP Copy AssetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				848CA28820AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift */,
+				848CA28A20AFCAEC000ACDF1 /* Info.plist */,
+			);
+			path = "FCP Copy AssetsTests";
+			sourceTree = "<group>";
+		};
+		848CA29220AFCAEC000ACDF1 /* FCP Copy AssetsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				848CA29320AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift */,
+				848CA29520AFCAEC000ACDF1 /* Info.plist */,
+			);
+			path = "FCP Copy AssetsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		848CA27120AFCAEB000ACDF1 /* FCP Copy Assets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 848CA29820AFCAEC000ACDF1 /* Build configuration list for PBXNativeTarget "FCP Copy Assets" */;
+			buildPhases = (
+				848CA26E20AFCAEB000ACDF1 /* Sources */,
+				848CA26F20AFCAEB000ACDF1 /* Frameworks */,
+				848CA27020AFCAEB000ACDF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCP Copy Assets";
+			productName = "FCP Copy Assets";
+			productReference = 848CA27220AFCAEB000ACDF1 /* FCP Copy Assets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		848CA28320AFCAEC000ACDF1 /* FCP Copy AssetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 848CA29B20AFCAEC000ACDF1 /* Build configuration list for PBXNativeTarget "FCP Copy AssetsTests" */;
+			buildPhases = (
+				848CA28020AFCAEC000ACDF1 /* Sources */,
+				848CA28120AFCAEC000ACDF1 /* Frameworks */,
+				848CA28220AFCAEC000ACDF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				848CA28620AFCAEC000ACDF1 /* PBXTargetDependency */,
+			);
+			name = "FCP Copy AssetsTests";
+			productName = "FCP Copy AssetsTests";
+			productReference = 848CA28420AFCAEC000ACDF1 /* FCP Copy AssetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		848CA28E20AFCAEC000ACDF1 /* FCP Copy AssetsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 848CA29E20AFCAEC000ACDF1 /* Build configuration list for PBXNativeTarget "FCP Copy AssetsUITests" */;
+			buildPhases = (
+				848CA28B20AFCAEC000ACDF1 /* Sources */,
+				848CA28C20AFCAEC000ACDF1 /* Frameworks */,
+				848CA28D20AFCAEC000ACDF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				848CA29120AFCAEC000ACDF1 /* PBXTargetDependency */,
+			);
+			name = "FCP Copy AssetsUITests";
+			productName = "FCP Copy AssetsUITests";
+			productReference = 848CA28F20AFCAEC000ACDF1 /* FCP Copy AssetsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		848CA26A20AFCAEB000ACDF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Cldfire;
+				TargetAttributes = {
+					848CA27120AFCAEB000ACDF1 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					848CA28320AFCAEC000ACDF1 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 848CA27120AFCAEB000ACDF1;
+					};
+					848CA28E20AFCAEC000ACDF1 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 848CA27120AFCAEB000ACDF1;
+					};
+				};
+			};
+			buildConfigurationList = 848CA26D20AFCAEB000ACDF1 /* Build configuration list for PBXProject "FCP Copy Assets" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 848CA26920AFCAEB000ACDF1;
+			productRefGroup = 848CA27320AFCAEB000ACDF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				848CA27120AFCAEB000ACDF1 /* FCP Copy Assets */,
+				848CA28320AFCAEC000ACDF1 /* FCP Copy AssetsTests */,
+				848CA28E20AFCAEC000ACDF1 /* FCP Copy AssetsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		848CA27020AFCAEB000ACDF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848CA27A20AFCAEC000ACDF1 /* Assets.xcassets in Resources */,
+				848CA27D20AFCAEC000ACDF1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA28220AFCAEC000ACDF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA28D20AFCAEC000ACDF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		848CA26E20AFCAEB000ACDF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848CA27820AFCAEB000ACDF1 /* ViewController.swift in Sources */,
+				848CA27620AFCAEB000ACDF1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA28020AFCAEC000ACDF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848CA28920AFCAEC000ACDF1 /* FCP_Copy_AssetsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848CA28B20AFCAEC000ACDF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848CA29420AFCAEC000ACDF1 /* FCP_Copy_AssetsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		848CA28620AFCAEC000ACDF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 848CA27120AFCAEB000ACDF1 /* FCP Copy Assets */;
+			targetProxy = 848CA28520AFCAEC000ACDF1 /* PBXContainerItemProxy */;
+		};
+		848CA29120AFCAEC000ACDF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 848CA27120AFCAEB000ACDF1 /* FCP Copy Assets */;
+			targetProxy = 848CA29020AFCAEC000ACDF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		848CA27B20AFCAEC000ACDF1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				848CA27C20AFCAEC000ACDF1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		848CA29620AFCAEC000ACDF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		848CA29720AFCAEC000ACDF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		848CA29920AFCAEC000ACDF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FCP Copy Assets/FCP_Copy_Assets.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				INFOPLIST_FILE = "FCP Copy Assets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cldfire.FCP-Copy-Assets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		848CA29A20AFCAEC000ACDF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FCP Copy Assets/FCP_Copy_Assets.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				INFOPLIST_FILE = "FCP Copy Assets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cldfire.FCP-Copy-Assets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		848CA29C20AFCAEC000ACDF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				INFOPLIST_FILE = "FCP Copy AssetsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cldfire.FCP-Copy-AssetsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FCP Copy Assets.app/Contents/MacOS/FCP Copy Assets";
+			};
+			name = Debug;
+		};
+		848CA29D20AFCAEC000ACDF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				INFOPLIST_FILE = "FCP Copy AssetsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cldfire.FCP-Copy-AssetsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FCP Copy Assets.app/Contents/MacOS/FCP Copy Assets";
+			};
+			name = Release;
+		};
+		848CA29F20AFCAEC000ACDF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				INFOPLIST_FILE = "FCP Copy AssetsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cldfire.FCP-Copy-AssetsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "FCP Copy Assets";
+			};
+			name = Debug;
+		};
+		848CA2A020AFCAEC000ACDF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3QW3A57NDT;
+				INFOPLIST_FILE = "FCP Copy AssetsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.cldfire.FCP-Copy-AssetsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "FCP Copy Assets";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		848CA26D20AFCAEB000ACDF1 /* Build configuration list for PBXProject "FCP Copy Assets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848CA29620AFCAEC000ACDF1 /* Debug */,
+				848CA29720AFCAEC000ACDF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		848CA29820AFCAEC000ACDF1 /* Build configuration list for PBXNativeTarget "FCP Copy Assets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848CA29920AFCAEC000ACDF1 /* Debug */,
+				848CA29A20AFCAEC000ACDF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		848CA29B20AFCAEC000ACDF1 /* Build configuration list for PBXNativeTarget "FCP Copy AssetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848CA29C20AFCAEC000ACDF1 /* Debug */,
+				848CA29D20AFCAEC000ACDF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		848CA29E20AFCAEC000ACDF1 /* Build configuration list for PBXNativeTarget "FCP Copy AssetsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848CA29F20AFCAEC000ACDF1 /* Debug */,
+				848CA2A020AFCAEC000ACDF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 848CA26A20AFCAEB000ACDF1 /* Project object */;
+}
