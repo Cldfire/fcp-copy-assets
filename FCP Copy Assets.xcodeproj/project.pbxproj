@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8449F80D20B081E40092DC7F /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449F80C20B081E40092DC7F /* Mutex.swift */; };
 		848CA27620AFCAEB000ACDF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */; };
 		848CA27820AFCAEB000ACDF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA27720AFCAEB000ACDF1 /* ViewController.swift */; };
 		848CA27A20AFCAEC000ACDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CA27920AFCAEC000ACDF1 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8449F80C20B081E40092DC7F /* Mutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
 		848CA27220AFCAEB000ACDF1 /* FCP Copy Assets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FCP Copy Assets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CA27520AFCAEB000ACDF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848CA27720AFCAEB000ACDF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				848CA27B20AFCAEC000ACDF1 /* Main.storyboard */,
 				848CA27E20AFCAEC000ACDF1 /* Info.plist */,
 				848CA27F20AFCAEC000ACDF1 /* FCP_Copy_Assets.entitlements */,
+				8449F80C20B081E40092DC7F /* Mutex.swift */,
 			);
 			path = "FCP Copy Assets";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848CA27820AFCAEB000ACDF1 /* ViewController.swift in Sources */,
+				8449F80D20B081E40092DC7F /* Mutex.swift in Sources */,
 				848CA27620AFCAEB000ACDF1 /* AppDelegate.swift in Sources */,
 				848CA2A220AFCB04000ACDF1 /* DropView.swift in Sources */,
 			);

@@ -5,6 +5,10 @@ import SWXMLHash
 
 class DropView: NSView {
     let pasteboardType = NSPasteboard.PasteboardType(rawValue: "public.utf8-plain-text")
+    let folderMutex = Mutex.init()
+    var folder: URL?
+    
+    @IBOutlet weak var lastActionText: NSTextField!
     
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
@@ -35,70 +39,122 @@ class DropView: NSView {
             return false
         }
         
-        var srcPaths: [URL] = []
-        var err: ParsingError? = nil
-        let parser = SWXMLHash.config {
-            config in
-            config.detectParsingErrors = true
-        }.parse(data)
+        askUserForCopyLocation()
         
-        switch parser {
-        case .parsingError(let error):
-            err = error
-        default:
-            err = nil
+        // Process the XML while the user is selecting a location
+        DispatchQueue.global().async {
+            var srcPaths: [URL] = []
+            
+            var err: ParsingError? = nil
+            let parser = SWXMLHash.config { config in
+                config.detectParsingErrors = true
+            }.parse(data)
+            
+            switch parser {
+            case .parsingError(let error):
+                err = error
+            default:
+                err = nil
+            }
+            
+            if let error = err {
+                DispatchQueue.main.async {
+                    buildAlert(
+                        """
+                        A parsing error ocurred at line \(error.line) column \(error.column);
+                        no files will be copied
+                        """
+                    ).runModal()
+                }
+            }
+            
+            for elem in parser["fcpxml"]["resources"]["asset"].all {
+                srcPaths.append(URL.init(string: elem.element!.attribute(by: "src")!.text)!)
+            }
+            
+            // Now that we have what we needed from the XML, lock `folder` and do copying
+            // if `folder` has been set to something
+            self.folderMutex.lock()
+            if let folder = self.folder {
+                let copied = self.copyFilesToFolder(srcPaths, folder: folder)
+                let attempted = srcPaths.count
+                let folderString = folder.absoluteString.removingPercentEncoding!
+
+                DispatchQueue.main.async {
+                    self.lastActionText.stringValue = "Copied \(copied)/\(attempted) files to \(folderString)"
+                }
+                
+                self.folder = nil
+            }
+            self.folderMutex.unlock()
         }
-        
-        if let error = err {
-            self.showAlert("A parsing error ocurred at line \(error.line) column \(error.column)")
-            return false
-        }
-        
-        for elem in parser["fcpxml"]["resources"]["asset"].all {
-            srcPaths.append(URL.init(string: elem.element!.attribute(by: "src")!.text)!)
-        }
-        
-        handleCopyingAssets(self.window!, assets: srcPaths)
         
         return true
     }
     
-    func showAlert(_ text: String) {
-        let alert = NSAlert()
-        alert.messageText = text
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "OK")
-        alert.runModal()
-    }
-    
-    /// Determines where the user wants to copy the assets and then handles the copying and potential errors.
-    func handleCopyingAssets(_ window: NSWindow, assets: [URL]) {
+    /// Determines where the user wants to copy the assets; does not block.
+    ///
+    /// The first thing this method does is lock `folderMutex`. It then creates and displays an
+    /// `NSOpenPanel`, setting `folder` to the chosen folder if OK was clicked and unlocking the
+    /// mutex regardless.
+    func askUserForCopyLocation() {
+        folderMutex.lock()
+        
         let openPanel = NSOpenPanel.init()
         openPanel.canCreateDirectories = true
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
         openPanel.canChooseFiles = false
         
-        openPanel.beginSheetModal(for: window, completionHandler: { response in
+        openPanel.begin(completionHandler: { response in
             if response == NSApplication.ModalResponse.OK {
-                self.copyFilesToFolder(assets, folder: openPanel.url!)
+                self.folder = openPanel.url!
             }
+            
+            self.folderMutex.unlock()
         })
     }
     
-    func copyFilesToFolder(_ files: [URL], folder: URL) {
+    /// Returns the number of files that were successfully copied.
+    ///
+    /// File names are not changed in the copying process. If the names of any files to be copied
+    /// conflict with the names of files already in `folder`, those files will fail to copy.
+    ///
+    /// Any errors that occur will be displayed to the user in an alert after an attempt has
+    /// been made to copy every file.
+    func copyFilesToFolder(_ files: [URL], folder: URL) -> Int {
         var errors: [Error] = []
+        var copied = files.count;
         
         for url in files {
             do {
-                try FileManager.default.copyItem(at: url, to: folder.appendingPathComponent(url.lastPathComponent))
+                try FileManager.default.copyItem(
+                    at: url,
+                    to: folder.appendingPathComponent(url.lastPathComponent)
+                )
             } catch let error {
+                copied -= 1
                 errors.append(error)
             }
         }
         
         if !errors.isEmpty {
-            showAlert("\(errors.map { $0.localizedDescription })")
+            DispatchQueue.main.async {
+                buildAlert("\(errors.map { $0.localizedDescription })").runModal()
+            }
         }
+        
+        return copied
     }
+}
+
+/// A simple helper that configures an `NSAlert` instance with a single "OK" button and the
+/// provided text.
+func buildAlert(_ text: String) -> NSAlert {
+    let alert = NSAlert()
+    alert.messageText = text
+    alert.alertStyle = .warning
+    alert.addButton(withTitle: "OK")
+    
+    return alert
 }
