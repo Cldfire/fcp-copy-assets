@@ -709,6 +709,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-7o-VS0">
+                                <rect key="frame" x="175" y="138" width="130" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drag clipping here" id="0Wf-mf-jQs">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29V-TW-AWH">
                                 <rect key="frame" x="18" y="46" width="75" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -727,17 +736,14 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-7o-VS0">
-                                <rect key="frame" x="175" y="138" width="130" height="19"/>
+                            <progressIndicator hidden="YES" wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-7R-7Fh">
+                                <rect key="frame" x="97" y="137" width="287" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drag clipping here" id="0Wf-mf-jQs">
-                                    <font key="font" metaFont="system" size="15"/>
-                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            </progressIndicator>
                         </subviews>
                         <connections>
+                            <outlet property="copyProgressIndicator" destination="Xpa-7R-7Fh" id="IoB-PB-kjj"/>
+                            <outlet property="dragHereLabel" destination="7K5-7o-VS0" id="4pA-1E-Tfp"/>
                             <outlet property="lastActionText" destination="sfx-5G-9di" id="UiM-50-pod"/>
                         </connections>
                     </view>

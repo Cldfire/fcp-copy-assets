@@ -9,6 +9,8 @@ class DropView: NSView {
     var folder: URL?
     
     @IBOutlet weak var lastActionText: NSTextField!
+    @IBOutlet weak var copyProgressIndicator: NSProgressIndicator!
+    @IBOutlet weak var dragHereLabel: NSTextField!
     
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
@@ -117,6 +119,9 @@ class DropView: NSView {
     
     /// Returns the number of files that were successfully copied.
     ///
+    /// Shows, updates, and hides `copyProgressIndicator`. Code that touches the UI is explicitly
+    /// run on the main thread, so this is safe to call from outside main.
+    ///
     /// File names are not changed in the copying process. If the names of any files to be copied
     /// conflict with the names of files already in `folder`, those files will fail to copy.
     ///
@@ -125,6 +130,11 @@ class DropView: NSView {
     func copyFilesToFolder(_ files: [URL], folder: URL) -> Int {
         var errors: [Error] = []
         var copied = files.count;
+        let percentPerFile = Double(100) / Double(files.count)
+        DispatchQueue.main.async {
+            self.dragHereLabel.isHidden = true
+            self.copyProgressIndicator.isHidden = false
+        }
         
         for url in files {
             do {
@@ -136,6 +146,10 @@ class DropView: NSView {
                 copied -= 1
                 errors.append(error)
             }
+            
+            DispatchQueue.main.async {
+                self.copyProgressIndicator.increment(by: percentPerFile.rounded())
+            }
         }
         
         if !errors.isEmpty {
@@ -144,6 +158,10 @@ class DropView: NSView {
             }
         }
         
+        DispatchQueue.main.async {
+            self.copyProgressIndicator.isHidden = true
+            self.dragHereLabel.isHidden = false
+        }
         return copied
     }
 }
