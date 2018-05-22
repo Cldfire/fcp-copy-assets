@@ -15,3 +15,9 @@ My use-case is copying all assets sharing a keyword to an external drive for tra
 I had to turn off sandboxing for this app since the asset filepaths are only indirectly provided by the user (through FCPXML input), not directly, and therefore do not get whitelisted. This doesn't really matter, though, since macOS's sandbox implementation is [pretty useless anyway](https://krausefx.com/blog/mac-privacy-sandboxed-mac-apps-can-take-screenshots).
 
 The code is short, straightforward, documented, and mostly in a single file (DropView.swift). I would encourage you to read it if you are bothered by the lack of sandboxing.
+
+## Building
+
+Make sure you have [Carthage](https://github.com/Carthage/Carthage#installing-carthage) installed. Building should be as simple as running `carthage update` at the root, opening the project in Xcode and hitting run.
+
+Please open an issue if you experience any trouble getting it to build.
