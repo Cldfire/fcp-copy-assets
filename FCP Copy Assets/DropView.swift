@@ -5,6 +5,7 @@ import SWXMLHash
 
 class DropView: NSView {
     let pasteboardType = NSPasteboard.PasteboardType(rawValue: "public.utf8-plain-text")
+    let dragMutex = Mutex.init()
     let folderMutex = Mutex.init()
     var folder: URL?
     
@@ -25,6 +26,11 @@ class DropView: NSView {
     }
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
+        if !dragMutex.tryLock() {
+            return NSDragOperation()
+        }
+        defer { dragMutex.unlock() }
+        
         return .copy
     }
     
@@ -37,6 +43,11 @@ class DropView: NSView {
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        // Make sure we aren't already processing dragged data
+        if !dragMutex.tryLock() {
+            return false
+        }
+        
         guard let data = sender.draggingPasteboard().data(forType: pasteboardType) else {
             return false
         }
@@ -77,8 +88,34 @@ class DropView: NSView {
             // Now that we have what we needed from the XML, lock `folder` and do copying
             // if `folder` has been set to something
             self.folderMutex.lock()
+            defer {
+                self.folderMutex.unlock()
+                self.dragMutex.unlock()
+            }
             if let folder = self.folder {
-                let copied = self.copyFilesToFolder(srcPaths, folder: folder)
+                DispatchQueue.main.async {
+                    self.dragHereLabel.isHidden = true
+                    self.copyProgressIndicator.isHidden = false
+                }
+                
+                let (copied, errors) = self.copyFilesToFolder(srcPaths, folder: folder, progressCallback: { percent in
+                    DispatchQueue.main.async {
+                        self.copyProgressIndicator.doubleValue = percent
+                    }
+                })
+                
+                DispatchQueue.main.async {
+                    self.copyProgressIndicator.isHidden = true
+                    self.copyProgressIndicator.doubleValue = 0
+                    self.dragHereLabel.isHidden = false
+                    
+                    if !errors.isEmpty {
+                        DispatchQueue.main.async {
+                            buildAlert("\(errors.map({ $0.localizedDescription }))").runModal()
+                        }
+                    }
+                }
+                
                 let attempted = srcPaths.count
                 let folderString = folder.absoluteString.removingPercentEncoding!
 
@@ -88,7 +125,6 @@ class DropView: NSView {
                 
                 self.folder = nil
             }
-            self.folderMutex.unlock()
         }
         
         return true
@@ -117,24 +153,18 @@ class DropView: NSView {
         })
     }
     
-    /// Returns the number of files that were successfully copied.
-    ///
-    /// Shows, updates, and hides `copyProgressIndicator`. Code that touches the UI is explicitly
-    /// run on the main thread, so this is safe to call from outside main.
+    /// Copies `files` to `folder`, calling `progressCallback` after each file copied.
     ///
     /// File names are not changed in the copying process. If the names of any files to be copied
     /// conflict with the names of files already in `folder`, those files will fail to copy.
     ///
-    /// Any errors that occur will be displayed to the user in an alert after an attempt has
-    /// been made to copy every file.
-    func copyFilesToFolder(_ files: [URL], folder: URL) -> Int {
+    /// Any errors will be accumulated and returned after an attempt has been made to copy all
+    /// files. The successfully copied files count is also returned.
+    func copyFilesToFolder(_ files: [URL], folder: URL, progressCallback: (Double) -> Void) -> (Int, [Error]) {
         var errors: [Error] = []
         var copied = files.count;
+        var currentPercent = Double(0)
         let percentPerFile = Double(100) / Double(files.count)
-        DispatchQueue.main.async {
-            self.dragHereLabel.isHidden = true
-            self.copyProgressIndicator.isHidden = false
-        }
         
         for url in files {
             do {
@@ -147,22 +177,16 @@ class DropView: NSView {
                 errors.append(error)
             }
             
-            DispatchQueue.main.async {
-                self.copyProgressIndicator.increment(by: percentPerFile.rounded())
-            }
+            currentPercent += percentPerFile
+            
+            // This is, unfortunately, the finest granularity that we can provide the callback.
+            // The `FileManager` API does not provide any hooks for progress updates and
+            // dropping down to a lower-level API would introduce unnecessary complication to
+            // this little utility.
+            progressCallback(currentPercent)
         }
         
-        if !errors.isEmpty {
-            DispatchQueue.main.async {
-                buildAlert("\(errors.map { $0.localizedDescription })").runModal()
-            }
-        }
-        
-        DispatchQueue.main.async {
-            self.copyProgressIndicator.isHidden = true
-            self.dragHereLabel.isHidden = false
-        }
-        return copied
+        return (copied, errors)
     }
 }
 
